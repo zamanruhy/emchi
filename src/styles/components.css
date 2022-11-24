@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .container {
+    @apply mx-auto box-content max-w-[1140px] px-4;
+  }
+}
