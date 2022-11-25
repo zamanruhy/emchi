@@ -24,7 +24,8 @@
     "prerender": "npm run build && node prerender && rimraf dist/server",
     "preview": "npm run prerender && vite preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css,html}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css,html}\"",
+    "ghpages": "deploy.sh"
   },
   "dependencies": {
     "embla-carousel": "^7.0.2",

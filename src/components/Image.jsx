@@ -1,4 +1,4 @@
-const maxWidth = 1280
+const maxWidth = 1140
 const screens = {
   sm: 640,
   md: 768,

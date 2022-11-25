@@ -6,14 +6,14 @@ import { Meta } from './components/Layout'
 
 export function render(url) {
   // const tags = []
-  const body = renderToString(() => (
+  let body = renderToString(() => (
     <Router url={url}>
       {/* <MetaProvider tags={tags}> */}
       <App />
       {/* </MetaProvider> */}
     </Router>
   ))
-  // const head = renderTags(tags).replace(/data-sm=".+?"/g, '')
+  // body = body.replace(/data-hk=".+?"/g, '')
   const head = renderToString(Meta)
   return { head, body }
 }

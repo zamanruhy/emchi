@@ -1,4 +1,5 @@
-import LogoImg from '../images/logo.jpg?jpg&metadata'
+import logoImg from '../images/logo.jpg?jpg&metadata'
+import Image from './Image'
 
 export default function Logo(props) {
   return (
@@ -7,9 +8,9 @@ export default function Logo(props) {
       className="logo flex items-center"
       classList={{ [props.className]: Boolean(props.className) }}
     >
-      <img
+      <Image
         class="mr-4 w-16 shrink-0 rounded-full md:w-20"
-        {...LogoImg}
+        src={logoImg}
         alt=""
       />
       <div>

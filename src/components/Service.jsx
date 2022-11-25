@@ -14,7 +14,7 @@ export default function Service(props) {
             alt="#"
             loading="lazy"
             decoding="async"
-            className="absolute top-0 left-0 h-full w-full rounded-t-lg object-cover sm:rounded-l-lg"
+            className="absolute top-0 left-0 h-full w-full rounded-t-lg object-cover sm:rounded-t-none sm:rounded-l-lg"
           />
         </div>
 

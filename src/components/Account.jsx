@@ -1,4 +1,5 @@
-import { NavLink } from '@solidjs/router'
+import { Link, useLocation } from '@solidjs/router'
+import { Dynamic } from 'solid-js/web'
 
 import LogoutIcon from '../icons/logout.svg?component'
 import BellIcon from '../icons/bell.svg?component'
@@ -64,6 +65,8 @@ const links = [
 ]
 
 export default function Account(props) {
+  const location = useLocation()
+
   return (
     <section className="account container mt-4 pb-32 md:mt-5">
       <div className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-3 md:mb-12">
@@ -103,11 +106,11 @@ export default function Account(props) {
             <ul className="grid gap-0.5 sm:grid-cols-2 lg:grid-cols-none">
               {links.map(({ href, name, Icon, count }) => (
                 <li>
-                  <NavLink
-                    href={href}
+                  <Dynamic
+                    component={import.meta.env.DEV ? Link : 'a'}
+                    href={import.meta.env.DEV ? href : `${href.slice(1)}.html`}
                     className="flex min-h-[50px] items-center rounded px-5 transition hover:bg-primary-50 [&.active]:bg-primary-500 [&.active]:text-white"
-                    activeClass="active"
-                    inactiveClass=""
+                    classList={{ active: location.pathname === href }}
                   >
                     <span className="mr-6 flex w-5 shrink-0 items-center justify-center">
                       <Icon className="h-5 fill-current" />
@@ -118,7 +121,7 @@ export default function Account(props) {
                         {count}
                       </span>
                     )}
-                  </NavLink>
+                  </Dynamic>
                 </li>
               ))}
             </ul>
